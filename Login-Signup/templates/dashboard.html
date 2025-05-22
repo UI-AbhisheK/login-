@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard-box">
+    <h1 class="welcome-text">Welcome, {{ username }}!</h1>
+    <p>congratulations,you login successfully</p>
+    <p id="clock"></p>
+<script>
+  setInterval(() => {
+    document.getElementById("clock").innerText = new Date().toLocaleTimeString();
+  }, 1000);
+</script>
+
+    <a href="{{ url_for('logout') }}">Logout</a>  
+</div>
+</body>
+</html>
